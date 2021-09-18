@@ -1,3 +1,6 @@
+This is a modified version of https://github.com/LoSealL/VideoSuperResolution framework.
+In this version, some model classes (SRCNN and DnCNN) include methods to execute quantized models generated with Xilinx VITIS-AI.
+
 # Video Super Resolution
 A collection of state-of-the-art video or single-image super-resolution architectures, reimplemented in tensorflow.
 
