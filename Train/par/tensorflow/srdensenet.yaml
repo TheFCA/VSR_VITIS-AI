@@ -1,0 +1,16 @@
+srdensenet:
+  n_blocks: 8
+  grad_clip: 0.01
+  weight_decay: 1.0e-4
+  scale: 4
+  channel: 1
+#patch_size: 64
+patch_size: 100
+batch: 32
+lr: 1.0e-3
+upscale_model: True
+multiscale: False
+lr_decay:
+  method: multistep
+  decay_step: [200]
+  decay_rate: 0.1

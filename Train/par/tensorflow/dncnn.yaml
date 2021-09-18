@@ -1,0 +1,14 @@
+dncnn:
+  layers: 20
+  grad_clip: 0.01
+  weight_decay: 0
+  scale: 4
+  channel: 1
+batch: 64
+patch_size: 50
+lr: 1.0e-4
+multiscale: False
+#lr_decay:
+#  method: exp
+#  decay_step: [25000]
+#  decay_rate: 0.0001

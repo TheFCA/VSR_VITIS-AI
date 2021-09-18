@@ -1,0 +1,168 @@
+# Copyright (c) 2018-2020 Wenyi Tang
+# VSR Dataset Description File
+# Date: Oct 17th 2018
+# Ver: v1.3
+
+---
+# Add root dir to dataset. Take effect on all patterns below.
+# Root: /mnt/data/datasets
+#Root: /mnt/0eafdae2-1d8c-43b3-aa1a-2eac4df4bfc5/data/datasets
+Root: /mnt/0eafdae2-1d8c-43b3-aa1a-2eac4df4bfc5/data
+# Collect your dataset directory and name them!
+Path:
+    # 91-IMAGE: 91-image/
+    # BSD100: BSD100_SR/image_SRF_4/*HR.*
+    # BSD500-Train: BSR_bsds500/BSR/BSDS500/data/images/train/*.jpg
+    # BSD500-Val: BSR_bsds500/BSR/BSDS500/data/images/val/*.jpg
+    # BSD500-Test: BSR_bsds500/BSR/BSDS500/data/images/test/*.jpg
+    # GOPRO-Train[video]: GOPRO_Large_all/train
+    # GOPRO-Val[video]: GOPRO_Large_all/test
+    # WATERLOO: exploration_database_and_code/pristine_images/
+    fastMRI-Train: qfastMRI/Train/HR*CORPD_FBK.png
+    fastMRI-Val: qfastMRI/Val/HR*CORPD_FBK.png
+    ADNI-Train: ADNI/Train/*.png
+    ADNI-Val: ADNI/Test/*.png
+#     ADNI2-Train: ADNI2/Train/HR*.png
+#     ADNI2-Val: ADNI2/Test/HR*.png
+#     DIV2K-Train: DIV2K/DIV2K_train_HR/
+#     DIV2K-Raw: DIV2K/DIV2K_train_LR/X4/*x4.png
+#     DIV2K-Val: DIV2K/DIV2K_valid_HR/
+# #    DDSM-Train: CBIS/training/HR*.png
+#     DDSM-Train: DDSM/Mass-training/HR*.png
+#     DDSM-Val: DDSM/Mass-test/HR*.png
+#     TFM-Train: TFM/Mass_Training_SR/*.png
+#     TFM-Val: TFM/Mass_Test_SR/*.png    
+#     TFM-Valx4: TFM/Mass_Test_SR_4_bicubic/*.png    
+#     TFMR-Train: TFMR/Training/HR*.png
+#     TFMR-Val: TFMR/Test/HR*.png    
+#     AFMR-Train: TFMR240b/Training/HR*.png
+#     AFMR-Val: TFMR240b/Test/HR*.png    
+#     TFMR2-Train: TFMR2/Training/HR*.png
+#     TFMR2-Val: TFMR2/Test/HR*.png        
+#     TFM240NR-Train: TFM240NR/Training/HR*.png
+#     TFM240NR-Val: TFM240NR/Test/HR*.png    
+#     TFM240-Train: TFM240/Training/HR*.png
+#     TFM240-Val: TFM240/Test/HR*.png    
+#     TFMDown-Train: TFMDown/Training/HR*.png
+#     TFMDown-Val: TFMDown/Test/HR*.png    
+# #    SET5: Set5_SR/Set5/image_SRF_4/*HR.*
+# #    SET14: Set14_SR/Set14/image_SRF_4/*HR.*
+#     Train291-Train: Train_291/*
+#     SET5: Set5/image_SRF_4/*HR.*
+#     SET5bicubic: Set5/image_SRF_4/*bicubic.*
+#     Zynq: Zynq/mio*.png
+#     SET14: Set14/image_SRF_4/*HR.*
+#     URBAN100: Urban100_SR/image_SRF_4/*HR.*
+#     SUNHAY80: SunHays80_SR/image_SRF_8/*HR.*
+#     VID4[video]: vid4/original/
+#     YOTRAIN-HR[video]: youku/train/hr/png
+#     YOTRAIN-LR[video]: youku/train/lr/png
+#     YOVAL-HR[video]: youku/val/hr/png
+#     YOVAL-LR[video]: youku/val/lr/png
+
+# bind datasets to a name, called in scripts
+Dataset:
+    NONE:  # empty set, do nothing
+        train: []
+        val: []
+        test: []
+
+    # The training data is collected from list of `train`.
+    # They are treated as the ground-truth HR images, and LR
+    # counterparts are automatically generated using bicubic interpolation.
+    # BSD:  # Combined BSD100 and BSD500 data
+    #     train: [BSD100, BSD500-Train]  # collected in array
+    #     val: BSD500-Val                # point as a single set
+    #     test: [BSD500-Test]
+    # 291-IMAGE:
+    #     train: [Train291-Train]
+    #     val: [SET5]
+    #     test: [SET5, SET14]
+
+    # 91-IMAGE:  # Yang's 91 images
+    #     train: 91-IMAGE
+    #     val: [SET5]
+    #     test: [SET5, SET14]
+    # WATERLOO:  # https://ece.uwaterloo.ca/~k29ma/exploration/
+    #     train: WATERLOO
+    #     val: [SET5, SET14]
+    #     test: [URBAN100, SUNHAY80]
+    # TFM:  # NTIRE-2017 Challenge
+    #     train: [TFM-Train]
+    #     val: [TFM-Val]
+    #     test: [TFM-Val]
+    # TFM2:
+    #     train: [TFMDown-Train]
+    #     val: [TFMDown-Val]
+    #     test: [TFMDown-Val]
+    # TFMR: #Renormalized
+    #     train: [TFMR-Train]
+    #     val: [TFMR-Val]
+    #     test: [TFMR-Val]
+    # TFMR2: #Renormalized
+    #     train: [TFMR2-Train]
+    #     val: [TFMR2-Val]
+    #     test: [TFMR2-Val]
+    # AFMR: #TFMR240b
+    #     train: [AFMR-Train]
+    #     val: [AFMR-Val]
+    #     test: [AFMR-Val]
+    # TFM240:
+    #     train: [TFM240-Train]
+    #     val: [TFM240-Val]
+    #     test: [TFM240-Val]
+    # TFM240NR:
+    #     train: [TFM240NR-Train]
+    #     val: [TFM240NR-Val]
+    #     test: [TFM240NR-Val]    
+
+    FASTMRI:  # NTIRE-2017 Challenge
+        train: [fastMRI-Train]
+        val: [fastMRI-Val]
+        test: [fastMRI-Val]
+
+    ADNI:  # NTIRE-2017 Challenge
+        train: [ADNI-Train]
+        val: [ADNI-Val]
+        test: [ADNI-Val]
+    
+    # ADNI2:  # NTIRE-2017 Challenge
+    #     train: [ADNI2-Train]
+    #     val: [ADNI2-Val]
+    #     test: [ADNI2-Val]    
+    # DDSM:  # NTIRE-2017 Challenge
+    #     train: [DDSM-Train]
+    #     val: [DDSM-Val]
+    #     test: [DDSM-Val]
+    # DIV2K:  # NTIRE-2017 Challenge
+    #     train:
+    #         hr: DIV2K-Train
+    #         lr: DIV2K-Raw
+    #     val: [DIV2K-Val]
+    #     test: [SET5, SET14]
+    # mySET5:  # fcarrio
+    #     test:
+    #         hr: SET5
+    #         lr: SET5bicubic
+    # DIV2K2:  # fcarrio
+    #     train: [DIV2K-Train]
+    #     val: [SET5]
+    #     test: [SET5]
+    # DW2K: # Combined DIV2K & Waterloo
+    #     train: [DIV2K-Train, WATERLOO, BSD500-Train]
+    #     val: [DIV2K-Val]
+
+    # GOPRO[video]: # https://github.com/SeungjunNah/DeepDeblur_release
+    #     train: [GOPRO-Train]
+    #     val: [GOPRO-Val]
+    #     test: [VID4]
+
+    # # If LR is pre-generated from HR or somewhere else, one can specify
+    # # customized LR data like this.
+    # YOUKU[video]:
+    #     train:
+    #         hr: YOTRAIN-HR
+    #         lr: YOTRAIN-LR
+    #     val:
+    #         hr: YOVAL-HR
+    #         lr: YOVAL-LR

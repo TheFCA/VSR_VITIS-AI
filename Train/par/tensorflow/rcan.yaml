@@ -1,0 +1,15 @@
+rcan:
+  channel_downscaling: 16
+  n_rcab: 4
+  n_rg: 3
+  filters: 64
+  scale: 4
+  channel: 1
+patch_size: 100
+batch: 32
+lr: 0.0001
+multiscale: False
+lr_decay:
+  method: exp
+  decay_step: [25000]
+  decay_rate: 0.0001

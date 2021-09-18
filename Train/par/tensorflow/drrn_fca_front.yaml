@@ -1,0 +1,19 @@
+drrn_fca_front:
+  residual_unit: 9
+  recursive_block: 1
+  weight_decay: 1.0e-4
+  grad_clip: 0.01
+  custom_upsample: false
+  use_batchnorm: false
+  scale: 4
+  channel: 1
+  strides: 1
+  placement: front
+batch: 128
+patch_size: 32
+multiscale: False
+lr: 1.0e-2
+lr_decay:
+    method: multistep
+    decay_step: [3000,10000,25000]
+    decay_rate: 0.1

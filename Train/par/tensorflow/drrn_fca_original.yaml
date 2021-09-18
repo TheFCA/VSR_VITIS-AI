@@ -1,0 +1,20 @@
+# srcnn 9-5-5
+drrn_fca_original:
+  residual_unit: 25
+  recursive_block: 1
+  weight_decay: 1.0e-4
+  grad_clip: 0.01
+  custom_upsample: false
+  use_batchnorm: false
+  scale: 4
+  channel: 1
+  strides: 1
+  placement: front
+batch: 64
+patch_size: 32
+multiscale: False
+lr: 1.0e-4
+lr_decay:
+    method: multistep
+    decay_step: [100]
+    decay_rate: 0.1

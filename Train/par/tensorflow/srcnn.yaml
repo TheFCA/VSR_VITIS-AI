@@ -1,0 +1,25 @@
+# srcnn 9-5-5
+---
+srcnn:
+  grad_clip: 0.01
+  weight_decay: 0.0 #1.0e-4
+  layers: 3
+  kernel:
+    - 9
+    - 3
+    - 5
+  filters:
+    - 64
+    - 32
+    - 1
+  custom_upsample: false
+  scale: 4
+  channel: 1
+batch: 128 #128
+patch_size: 32
+multiscale: False
+lr: 5.0e-4
+#lr_decay:
+#    method: multistep
+#    decay_step: [100,10000]
+#    decay_rate: 0.1
